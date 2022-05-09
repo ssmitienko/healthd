@@ -1,0 +1,10 @@
+[Unit]
+Description=healthd service health agregator
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/opt/bin/healthd -httpget http://localhost -filedontexists /tmp/healthd.flag
+
+[Install]
+WantedBy=multi-user.target
